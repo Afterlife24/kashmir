@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurantly</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div id="contact-info-top">Call us: (123) 456-7890</div>
+        <div class="language-switch">
+            <a href="#" onclick="switchLanguage('en')">EN</a> | 
+            <a href="#" onclick="switchLanguage('fr')">FR</a>
+        </div>
+    </div>
+
+    <!-- Header -->
+<header class="header">
+    <div class="logo">RESTAURANTLY</div>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="https://scanme-scanme.gofastapi.com//?table_num=0">Menu</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <a href="https://scanme-scanme.gofastapi.com//?table_num=0" class="book-table">BOOK A TABLE</a>
+    
+    <!-- Hamburger icon for mobile view -->
+    <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</header>
+
+    <!-- Hero Section (Home) -->
+    <section id="home" class="hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1>Welcome to <span>Restaurantly</span></h1>
+            <p>Delivering great food for more than 18 years!</p>
+            <div class="hero-buttons">
+                <a href="#about" class="btn">Learn More</a>
+                <a href="https://scanme-scanme.gofastapi.com//?table_num=0" class="btn">Order Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="about-content">
+            <h2>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <ul>
+                <li>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                <li>Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+                <li>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+            </ul>
+            <p>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        </div>
+        <div class="about-image">
+            <img src="image.png" alt="Restaurant Interior" width="100%">
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section id="why-us" class="why-us-section">
+        <div class="why-us-content">
+            <h5>WHY US</h5>
+            <h2>Why Choose Our Restaurant</h2>
+            <div class="why-us-boxes">
+                <div class="why-us-box">
+                    <div class="why-us-number">01</div>
+                    <h3>Lorem Ipsum</h3>
+                    <p>Ulamco laboris nisi ut aliquip ex ea commodo consequat. Et consectetur ducimus vero placeat</p>
+                </div>
+                <div class="why-us-box">
+                    <div class="why-us-number">02</div>
+                    <h3>Repellat Nihil</h3>
+                    <p>Dolorem est fugiat occaecati voluptate velit esse. Dicta veritatis dolor quod et vel dire leno para dest</p>
+                </div>
+                <div class="why-us-box">
+                    <div class="why-us-number">03</div>
+                    <h3>Ad ad velit qui</h3>
+                    <p>Molestiae officiis omnis illo asperiores. Aut doloribus vitae sunt debitis quo vel nam quis</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Food Section -->
+    <section id="food">
+    <span class="menu-title">Food</span>
+    <hr class="divider">
+    <h2>Check Our Tasty Categories</h2>
+    <div class="food-container container">
+        <div class="food-type" data-type="fruit">
+            <div class="img-container">
+                <img src="https://i.postimg.cc/yxThVPXk/food1.jpg" alt="fruit">
+                <div class="img-content">
+                    <h3>Fruit</h3>
+                </div>
+            </div>
+        </div>
+        <div class="food-type" data-type="veg">
+            <div class="img-container">
+                <img src="https://i.postimg.cc/Nffm6Rkk/food2.jpg" alt="veg">
+                <div class="img-content">
+                    <h3>Veg</h3>
+                </div>
+            </div>
+        </div>
+        <div class="food-type" data-type="grain">
+            <div class="img-container">
+                <img src="https://i.postimg.cc/76ZwsPsd/food3.jpg" alt="grain">
+                <div class="img-content">
+                    <h3>Grains</h3>
+                </div>
+            </div>
+        </div>
+        <!-- Duplicate items to simulate the effect -->
+        <div class="food-type" data-type="fruit">
+            <div class="img-container">
+                <img src="https://i.postimg.cc/yxThVPXk/food1.jpg" alt="fruit">
+                <div class="img-content">
+                    <h3>Fruit</h3>
+                </div>
+            </div>
+        </div>
+        <div class="food-type" data-type="veg">
+            <div class="img-container">
+                <img src="https://i.postimg.cc/Nffm6Rkk/food2.jpg" alt="veg">
+                <div class="img-content">
+                    <h3>Veg</h3>
+                </div>
+            </div>
+        </div>
+        <div class="food-type" data-type="grain">
+            <div class="img-container">
+                <img src="https://i.postimg.cc/76ZwsPsd/food3.jpg" alt="grain">
+                <div class="img-content">
+                    <h3>Grains</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Order Button -->
+    <div class="order-button-container">
+        <a href="https://scanme-scanme.gofastapi.com//?table_num=0" class="order-button">Order and enjoy!!</a>
+    </div>
+</section>
+
+
+    <!-- Events Section -->
+<section id="events" class="events-section">
+    <h5>EVENTS</h5>
+    <h2>Organize Your Events in our Restaurant</h2>
+    <div class="carousel-container">
+        <div class="events-wrapper">
+            <!-- Event item 1 -->
+            <div class="event-item">
+                <div class="event-image">
+                    <img src="downlo.jpeg" alt="Event Image">
+                </div>
+                <div class="event-details">
+                    <h3>Custom Parties</h3>
+                    <p class="price">$99</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <ul>
+                        <li>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                        <li>Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+                        <li>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                    </ul>
+                    <p>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                </div>
+            </div>
+            <!-- Event item 2 -->
+            <div class="event-item">
+                <div class="event-image">
+                    <img src="downlo.jpeg" alt="Event Image">
+                </div>
+                <div class="event-details">
+                    <h3>Custom Parties</h3>
+                    <p class="price">$99</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <ul>
+                        <li>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                        <li>Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+                        <li>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                    </ul>
+                    <p>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                </div>
+            </div>
+            <!-- Event item 3 -->
+            <div class="event-item">
+                <div class="event-image">
+                    <img src="downlo.jpeg" alt="Event Image">
+                </div>
+                <div class="event-details">
+                    <h3>Custom Parties</h3>
+                    <p class="price">$99</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <ul>
+                        <li>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                        <li>Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+                        <li>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                    </ul>
+                    <p>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Dots for Carousel Navigation -->
+        <!-- <div class="carousel-dots"></div> -->
+    </div>
+</section>
+<!-- Gallery Section -->
+<section id="gallery" class="gallery-section">
+    <h5>GALLERY</h5>
+    <h2>Some photos from Our Restaurant</h2>
+    <div class="gallery-grid">
+        <div class="gallery-item">
+            <img src="img1.jpg" alt="Image 1">
+        </div>
+        <div class="gallery-item">
+            <img src="img2.jpeg" alt="Image 2">
+        </div>
+        <div class="gallery-item">
+            <img src="img3.jpg" alt="Image 3">
+        </div>
+        <div class="gallery-item">
+            <img src="img4.jpg" alt="Image 4">
+        </div>
+        <div class="gallery-item">
+            <img src="img5.jpg" alt="Image 5">
+        </div>
+        <div class="gallery-item">
+            <img src="img6.jpg" alt="Image 6">
+        </div>
+        <div class="gallery-item">
+            <img src="img7.jpg" alt="Image 7">
+        </div>
+        <div class="gallery-item">
+            <img src="img8.jpeg" alt="Image 8">
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+    <h5>CONTACT</h5>
+    <h2>Contact Us</h2>
+
+    <!-- Map -->
+    <div class="map-container">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.9340577646973!2d-74.01039228459336!3d40.712775279330455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4a3c0b3b7f1a4e0e!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1600000000000!5m2!1sen!2sus"
+            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <div class="contact-info-container">
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <p><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> A108 Adam Street, New York, NY 535022</p>
+            <p><i class="fas fa-clock"></i> <strong>Open Hours:</strong> Monday-Saturday: 11:00 AM - 23:00 PM</p>
+            <p><i class="fas fa-envelope"></i> <strong>Email:</strong> info@example.com</p>
+            <p><i class="fas fa-phone"></i> <strong>Call:</strong> +1 5589 55488 55s</p>
+        </div>
+    </div>
+</section>
+
+   <!-- Navigate to Menu Icon -->
+<a href="https://scanme-scanme.gofastapi.com//?table_num=0" target="_blank" class="scroll-to-menu">
+    <img src="scan-me.png" alt="Menu Icon">
+</a>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
