@@ -13,7 +13,7 @@ window.addEventListener('scroll', () => {
   }
 
   // Scroll-to-top button visibility
-  if (window.scrollY > 300) {
+  if (window.scrollY > 100) {
       scrollToTopButton.classList.add('show');
   } else {
       scrollToTopButton.classList.remove('show');
