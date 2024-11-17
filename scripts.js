@@ -5,7 +5,7 @@ window.addEventListener('scroll', () => {
 
   // About Section Fade-in
   const aboutSectionPosition = aboutContent.getBoundingClientRect().top;
-  const screenPosition = window.innerHeight / 2;
+  const screenPosition = window.innerHeight / 1.5;
 
   if (aboutSectionPosition < screenPosition) {
       aboutContent.classList.add('visible');
@@ -15,9 +15,7 @@ window.addEventListener('scroll', () => {
   // Scroll-to-top button visibility
   if (window.scrollY > 100) {
       scrollToTopButton.classList.add('show');
-  } else {
-      scrollToTopButton.classList.remove('show');
-  }
+  } 
 });
 
 window.addEventListener('scroll', () => {
@@ -25,7 +23,7 @@ window.addEventListener('scroll', () => {
 
   // Why Us Section Fade-in
   const whyUsSectionPosition = whyUsContent.getBoundingClientRect().top;
-  const screenPosition = window.innerHeight / 2;
+  const screenPosition = window.innerHeight / 1.5;
 
   if (whyUsSectionPosition < screenPosition) {
       whyUsContent.classList.add('visible');

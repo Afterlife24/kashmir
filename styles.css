@@ -441,7 +441,7 @@ body {
 .events-wrapper {
     display: flex;
     transition: transform 1s ease; /* Smooth scroll effect */
-    width: 300vw; /* Width set to match three 100vw items */
+    width: 98vw; /* Width set to match three 100vw items */
     overflow: hidden;
 }
 
