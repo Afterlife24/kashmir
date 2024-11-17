@@ -5,7 +5,7 @@ window.addEventListener('scroll', () => {
 
   // About Section Fade-in
   const aboutSectionPosition = aboutContent.getBoundingClientRect().top;
-  const screenPosition = window.innerHeight / 1.7;
+  const screenPosition = window.innerHeight / 1.3;
 
   if (aboutSectionPosition < screenPosition) {
       aboutContent.classList.add('visible');
