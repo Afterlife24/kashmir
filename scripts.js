@@ -35,6 +35,9 @@ const eventItems = document.querySelectorAll('.event-item');
 const totalItems = eventItems.length;
 let currentIndex = 0;
 
+// Adjust wrapper width dynamically
+eventsWrapper.style.width = `${totalItems * 100}vw`;
+
 // Auto-scroll function
 function showNextEvent() {
     currentIndex = (currentIndex + 1) % totalItems;
@@ -61,10 +64,12 @@ const dotsContainer = document.querySelector('.carousel-dots');
 eventItems.forEach((_, index) => {
     const dot = document.createElement('div');
     dot.classList.add('carousel-dot');
-    if (index === currentIndex) dot.classList.add('active');
     dot.addEventListener('click', () => goToEvent(index));
     dotsContainer.appendChild(dot);
 });
+
+// Initialize dots and carousel
+updateDots();
 
 // Update dots active state
 function updateDots() {
@@ -73,6 +78,13 @@ function updateDots() {
         dot.classList.toggle('active', index === currentIndex);
     });
 }
+
+// Scroll-to-top button
+const scrollToTopBtn = document.querySelector('.scroll-to-top');
+scrollToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
 
 // Language data object
 const languageData = {

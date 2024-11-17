@@ -153,26 +153,32 @@ body {
     padding-left: 10%;
     text-align: left;
     color: white;
+    overflow: hidden;
+    /* Ensures overlay doesn't affect other sections */
 }
 
-.overlay {
+.hero .overlay {
+    /* Corrected selector */
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(
-        rgba(0, 0, 0, 0.5), /* Existing black overlay */
-        rgba(0, 0, 0, 0.5)
-    ), 
-    url('kasss[1].jpg') center/cover no-repeat; /* Transparent overlay image */
-    opacity: 0.7; /* 70% transparency for the image */
-    z-index: 0; /* Ensures it sits below the content */
+    background: linear-gradient(rgba(0, 0, 0, 0.5),
+            /* Existing black overlay */
+            rgba(0, 0, 0, 0.5)),
+        url('kasss[1].jpg') center/cover no-repeat;
+    /* Transparent overlay image */
+    opacity: 0.7;
+    /* 70% transparency for the image */
+    z-index: 0;
+    /* Ensures it sits below the content */
 }
 
 .hero-content {
     position: relative;
-    z-index: 1; /* Ensures content sits above the overlay */
+    z-index: 1;
+    /* Ensures content sits above the overlay */
 }
 
 .hero-content h1 {
@@ -215,7 +221,8 @@ body {
 .about-section {
     display: flex;
     padding: 50px;
-    background-color: #222;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('kashmir\ photos.jpg') center/cover no-repeat;
 }
 
 .about-content {
@@ -259,8 +266,8 @@ body {
     flex: 1;
     margin-left: 20px;
     opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transform: translateY(50px) scale(0.9) rotate(10deg);
+    transition: opacity 0.6s ease-out, transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
     border: 2px solid rgba(255, 255, 255, 0.3);
     padding: 10px;
     border-radius: 5px;
@@ -268,7 +275,32 @@ body {
 
 .about-image.visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1) rotate(0deg);
+}
+
+
+/* For screens smaller than 768px (Tablets and mobile devices) */
+@media (max-width: 768px) {
+    .about-image {
+        margin-left: 0;
+        transform: translateY(40px) scale(0.85) rotate(5deg);
+    }
+
+    .about-image.visible {
+        transform: translateY(0) scale(1) rotate(0deg);
+    }
+}
+
+/* For screens smaller than 480px (Mobile phones) */
+@media (max-width: 480px) {
+    .about-image {
+        transform: translateY(30px) scale(0.8) rotate(0deg);
+        /* Further reduced scale and less rotation */
+    }
+
+    .about-image.visible {
+        transform: translateY(0) scale(1) rotate(0deg);
+    }
 }
 
 /* Responsive Design */
@@ -306,7 +338,7 @@ body {
     border-radius: 50%;
     cursor: pointer;
     display: none;
-    transition: background 0.3s;
+    transition: background 0.5s;
 }
 
 .scroll-to-top.show {
@@ -319,10 +351,34 @@ body {
 
 /* Why Us Section */
 .why-us-section {
+    position: relative;
     background-color: #111;
     color: #fff;
     padding: 60px 10%;
     text-align: center;
+    overflow: hidden;
+    /* Ensure content stays within this section */
+}
+
+.why-us-section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)),
+        url('kasss[1].jpg') center/cover no-repeat;
+    /* Replace with your overlay image */
+    opacity: 0.7;
+    z-index: 0;
+    /* Ensure it sits behind the content */
+}
+
+.why-us-section .content {
+    position: relative;
+    z-index: 1;
+    /* Ensures content is above the overlay */
 }
 
 .why-us-section h5 {
@@ -345,24 +401,100 @@ body {
     display: flex;
     justify-content: space-between;
     gap: 20px;
-    flex-wrap: wrap; /* Enables wrapping for smaller screens */
+    flex-wrap: wrap;
+    /* Enables wrapping for smaller screens */
+    margin: 0 auto;
+    max-width: 1200px;
+    /* Limits the width on large screens */
 }
 
 /* Individual Why Us Box */
 .why-us-box {
     background-color: #222;
-    padding: 20px;
+    padding: 25px;
     flex: 1;
-    border-radius: 8px;
+    border-radius: 15px;
     text-align: left;
-    min-width: 280px; /* Ensures boxes don't shrink too much */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds some depth */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-width: 280px;
+    /* Ensures boxes don't shrink too much */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* Adds depth */
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.3s ease, filter 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .why-us-box:hover {
-    transform: translateY(-5px); /* Slight lift on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-12px) scale(1.03);
+    /* Slight elevation and smooth scaling */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    /* Softer, larger shadow */
+    background-color: #333;
+    /* Darker background on hover */
+    filter: brightness(1.2);
+    /* Brighten the box on hover */
+}
+
+.why-us-box .content {
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.why-us-box:hover .content {
+    transform: translateY(-5px);
+    /* Subtle movement of content */
+    opacity: 0.9;
+    /* Slight fade effect */
+}
+
+/* Glowing Effect using ::after */
+.why-us-box::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+    pointer-events: none;
+}
+
+.why-us-box:hover::after {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+/* Mobile View: Responsive Design */
+@media (max-width: 768px) {
+    .why-us-boxes {
+        flex-direction: column;
+        /* Stacks the boxes vertically */
+        align-items: center;
+        /* Centers the boxes */
+    }
+
+    .why-us-box {
+        min-width: 100%;
+        /* Ensures the boxes take up full width on smaller screens */
+        margin-bottom: 20px;
+        /* Adds spacing between stacked boxes */
+    }
+
+    .why-us-box:hover {
+        transform: translateY(-8px) scale(1.02);
+        /* Reduced effect for mobile */
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        /* Softer shadow for mobile */
+    }
+
+    .why-us-box .content {
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
 }
 
 /* Why Us Number Styling */
@@ -437,75 +569,117 @@ body {
     }
 }
 
-/* Wrapper for Events */
-.events-wrapper {
-    display: flex;
-    transition: transform 1s ease; /* Smooth scroll effect */
-    width: 98vw; /* Width set to match three 100vw items */
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    /* Smooth scrolling */
+}
+
+/* Body Styling */
+
+
+/* Events Section Styling */
+.events-section {
+    position: relative;
+    padding: 50px 20px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+            url('kashmir\ photos.jpg') center/cover no-repeat;
+    /* Subtle gradient for depth */
     overflow: hidden;
 }
 
-/* Events Section Title Styling */
+/* Section Titles */
 .events-section h5 {
     font-size: 30px;
-    color: #ffd700; /* Gold color */
+    color: #ffd700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    margin-bottom: 10px;
     text-align: center;
-    margin-top: 50px;
+    margin-bottom: 10px;
+    animation: fadeIn 1s ease-in-out;
 }
 
 .events-section h2 {
     font-size: 32px;
-    color: #fff; /* White color for main title */
+    color: #ffffff;
     font-weight: bold;
-    margin-bottom: 40px;
     text-align: center;
+    margin-bottom: 40px;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
-/* Responsive adjustments */
-@media (max-width: 992px) {
-    .events-section h2 {
-        font-size: 28px; /* Slightly smaller on medium screens */
-    }
+/* Carousel Container */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 15px;
+    /* Smooth rounded edges */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    /* Elevation effect */
 }
 
-@media (max-width: 768px) {
-    .events-section h5 {
-        font-size: 20px;
-        letter-spacing: 1.5px;
-    }
-    .events-section h2 {
-        font-size: 24px; /* Smaller font on small screens */
-        margin-bottom: 30px;
-    }
+/* Wrapper for Events */
+.events-wrapper {
+    display: flex;
+    transition: transform 1s cubic-bezier(0.25, 0.8, 0.25, 1);
+    /* Smooth easing */
+    will-change: transform;
+    /* Optimized for performance */
 }
 
-/* Each Event Item */
+/* Event Item */
 .event-item {
-    flex: 1 0 100vw; /* Ensures each item takes 100vw */
-    background: url('event-background.jpg') no-repeat center center/cover; /* Example background image */
-    color: #fff;
+    flex: 1 0 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 2rem;
-    box-sizing: border-box;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    /* Frosted glass effect */
     position: relative;
+    overflow: hidden;
+    transform: scale(0.95);
+    /* Slightly scaled-down by default */
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    /* Smooth hover effect */
+    opacity: 0.8;
+    /* Slight fade by default */
 }
 
-/* Event Content Styling */
-.event-item h5 {
-    color: #ffd700;
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+.event-item.active {
+    transform: scale(1);
+    /* Focused slide is fully scaled */
+    opacity: 1;
+    /* Fully opaque for the active slide */
 }
 
-.event-item h2 {
-    font-size: 2rem;
+.event-item:hover {
+    transform: scale(1.02);
+    /* Slight zoom on hover for active item */
+    transition: transform 0.5s ease-in-out;
+}
+
+.event-item img {
+    width: 80%;
+    max-height: 200px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.event-item h3 {
+    font-size: 1.8rem;
     font-weight: bold;
+    color: #ffd700;
     margin-bottom: 1rem;
 }
 
@@ -529,30 +703,99 @@ body {
     transform: translateX(-50%);
     display: flex;
     gap: 10px;
+    z-index: 10;
 }
 
 .carousel-dot {
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 50%;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .carousel-dot.active {
     background-color: #ffd700;
+    transform: scale(1.3);
+    /* Enlarged for active dot */
 }
 
-/* Scroll-to-top Button */
+.carousel-dot:hover {
+    background-color: #ffc107;
+    /* Slight change on hover */
+}
+
+/* Scroll-to-Top Button */
 .scroll-to-top {
     position: fixed;
     bottom: 20px;
     right: 20px;
     background-color: #ffd700;
     color: #000;
-    padding: 10px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
+}
+
+.scroll-to-top:hover {
+    background-color: #ffc107;
+    transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .events-section h5 {
+        font-size: 20px;
+        letter-spacing: 1.5px;
+    }
+
+    .events-section h2 {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    .event-item {
+        padding: 1rem;
+    }
+
+    .event-item h3 {
+        font-size: 1.5rem;
+    }
+
+    .event-item .price {
+        font-size: 1.5rem;
+    }
+
+    .event-item p {
+        font-size: 0.9rem;
+    }
+
+    .carousel-dot {
+        width: 10px;
+        height: 10px;
+    }
 }
 
 /* Gallery Section Styles */
@@ -684,7 +927,7 @@ body {
 
 /* General Section Styling */
 #food {
-    background-color: #1c1b18;
+    background: url('kasss[1].jpg') center/cover no-repeat;
     padding: 60px 0;
     text-align: center;
     color: #fff;
