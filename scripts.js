@@ -1,3 +1,33 @@
+function toggleMenu() {
+    const navbar = document.querySelector('.navbar');
+    const hamburger = document.querySelector('.hamburger');
+    navbar.classList.toggle('active');
+    hamburger.classList.toggle('active');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 window.addEventListener('scroll', () => {
   const aboutContent = document.querySelector('.about-content');
   const aboutImage = document.querySelector('.about-image');
@@ -23,7 +53,7 @@ window.addEventListener('scroll', () => {
 
   // Why Us Section Fade-in
   const whyUsSectionPosition = whyUsContent.getBoundingClientRect().top;
-  const screenPosition = window.innerHeight / 1.7;
+  const screenPosition = window.innerHeight / 1.3;
 
   if (whyUsSectionPosition < screenPosition) {
       whyUsContent.classList.add('visible');
