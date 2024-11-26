@@ -2,8 +2,21 @@ function toggleMenu() {
     const navbar = document.querySelector('.navbar');
     const hamburger = document.querySelector('.hamburger');
     navbar.classList.toggle('active');
-    
+    hamburger.classList.toggle('active');
 }
+
+// Close the menu when a link is clicked
+document.querySelectorAll('.navbar ul li a').forEach(link => {
+    link.addEventListener('click', () => {
+        const navbar = document.querySelector('.navbar');
+        const hamburger = document.querySelector('.hamburger');
+        if (navbar.classList.contains('active')) {
+            navbar.classList.remove('active');
+            hamburger.classList.remove('active');
+        }
+    });
+});
+
 
 window.addEventListener('scroll', () => {
   const aboutContent = document.querySelector('.about-content');
@@ -64,7 +77,7 @@ function goToEvent(index) {
 }
 
 // Auto-scroll every 10 seconds
-setInterval(showNextEvent, 10000);
+setInterval(showNextEvent, 4000);
 
 // Create dots for navigation
 const dotsContainer = document.querySelector('.carousel-dots');
