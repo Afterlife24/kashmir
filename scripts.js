@@ -2,31 +2,8 @@ function toggleMenu() {
     const navbar = document.querySelector('.navbar');
     const hamburger = document.querySelector('.hamburger');
     navbar.classList.toggle('active');
-    hamburger.classList.toggle('active');
+    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 window.addEventListener('scroll', () => {
   const aboutContent = document.querySelector('.about-content');

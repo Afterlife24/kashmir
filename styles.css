@@ -32,11 +32,12 @@ body {
     display: flex;
     flex-direction: column;
     padding: 10px 20px;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(58, 57, 57, 0.8);
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    height: 60px;
 }
 
 .header-content {
@@ -276,7 +277,7 @@ body {
 /* Hero section styling with enhanced space */
 .hero {
     position: relative;
-    height: 80vh;
+    height: 93vh;
     background: url('background.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
@@ -300,7 +301,7 @@ body {
         url('kasss1.jpg') center/cover no-repeat;
     opacity: 0.7;
     z-index: 0;
-    animation: fadeIn 2s ease-out;
+    
 }
 
 /* Hero content styling with animations */
@@ -422,7 +423,7 @@ body {
     display: flex;
     padding: 50px;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url('kashmir\ photos.jpg') center/cover no-repeat;
+        url('pictures/bg1.png') center/cover no-repeat;
 }
 
 .about-content {
@@ -430,6 +431,20 @@ body {
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.about-content h1 {
+    font-size: 48px;
+    color: white;
+    font-weight: bold;
+    animation: fadeIn 1s ease-out;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 20px;
+    /* Add space below the heading */
+}
+
+.about-content h1 span {
+    color: #f0a500;
+    animation: slideIn 1.5s ease-out;
 }
 
 .about-content.visible {
@@ -779,7 +794,7 @@ body {
     position: relative;
     padding: 50px 20px;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-            url('kashmir\ photos.jpg') center/cover no-repeat;
+            url('kasss1.jpg') center/cover no-repeat;
     /* Subtle gradient for depth */
     overflow: hidden;
 }
@@ -1174,16 +1189,18 @@ body {
 }
 
 .img-container img {
-    width: 100%;
+    width: 90%;
     border-radius: 10px;
     transition: opacity 0.3s ease-in-out;
+    height: 300px;
+
 }
 
 .img-container .img-content {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 90%;
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
     display: flex;
@@ -1215,12 +1232,14 @@ body {
 @media (max-width: 992px) {
     .food-type {
         width: 45%;
+        height: 200px;
     }
 }
 
 @media (max-width: 768px) {
     .food-type {
         width: 45%;
+        height: 250px;
     }
 }
 
