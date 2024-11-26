@@ -398,7 +398,7 @@ body {
     /* Smaller screens (phones) */
     .hero {
         
-        height: 80vh;
+        height: 85vh;
         padding: 20px;
         /* Add more padding on smaller screens */
     }
