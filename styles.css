@@ -1086,41 +1086,25 @@ body {
 
 /* Map Container */
 .map-container {
-    margin: 0 auto 40px;
-    width: 90%;
-    /* Default width for all devices */
-    max-width: 1200px;
-    /* Limit the maximum width */
-    height: 400px;
-    /* Default height */
-    position: relative;
-    border: 1px solid #ddd;
-    overflow: hidden;
+    margin-bottom: 40px;
+    width: 100%;
+    /* Ensure the container takes the full width */
+    height: auto;
+    /* Automatically adjust height */
 }
 
 .map-container iframe {
     width: 100%;
-    height: 100%;
-    border: none;
+    /* Make the iframe responsive */
+    height: 300px;
+    /* Adjust height for mobile screens */
+    border: 0;
 }
 
-/* Mobile adjustments */
-@media (max-width: 768px) {
-    .map-container {
-        width: 100%;
-        /* Use full width on smaller screens */
-        height: 300px;
-        /* Reduce height for mobile devices */
-    }
-}
-
-/* Tablet adjustments */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .map-container {
-        width: 95%;
-        /* Slightly narrower on tablets */
-        height: 350px;
-        /* Adjust height for medium screens */
+@media (min-width: 768px) {
+    .map-container iframe {
+        height: 450px;
+        /* Keep original height for tablets and above */
     }
 }
 
