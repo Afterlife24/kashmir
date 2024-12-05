@@ -1087,6 +1087,22 @@ body {
 /* Map Container */
 .map-container {
     margin-bottom: 40px;
+    width: 100%;
+}
+
+.map-container iframe {
+    width: 100%;
+    /* Ensure the iframe takes up the full width of its container */
+    height: 300px;
+    /* Adjust the height for better visibility on smaller screens */
+}
+
+
+@media (max-width: 768px) {
+    .map-container iframe {
+        height: 250px;
+        /* Adjust height for smaller tablets and phones */
+    }
 }
 
 /* Contact Info Styling */
