@@ -1088,23 +1088,44 @@ body {
 .map-container {
     margin-bottom: 40px;
     width: 100%;
-    /* Ensure the container takes the full width */
+    /* Ensure it adapts to the parent container's width */
+    max-width: 100%;
+    /* Prevent it from exceeding the parent width */
     height: auto;
     /* Automatically adjust height */
+    box-sizing: border-box;
+    /* Include padding and border in width/height calculations */
 }
 
 .map-container iframe {
     width: 100%;
-    /* Make the iframe responsive */
+    /* Make the iframe fully responsive */
     height: 300px;
-    /* Adjust height for mobile screens */
+    /* Adjust height for smaller screens */
     border: 0;
 }
 
+/* For extra small screens (max width 576px) */
+@media (max-width: 576px) {
+    .map-container iframe {
+        height: 250px;
+        /* Reduce height for very small screens */
+    }
+}
+
+/* For medium-sized screens (576px to 768px) */
+@media (min-width: 576px) and (max-width: 768px) {
+    .map-container iframe {
+        height: 350px;
+        /* Slightly larger height for medium-sized screens */
+    }
+}
+
+/* For larger screens (min-width 768px) */
 @media (min-width: 768px) {
     .map-container iframe {
         height: 450px;
-        /* Keep original height for tablets and above */
+        /* Original height for larger screens */
     }
 }
 
